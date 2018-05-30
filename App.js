@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { createStackNavigator } from 'react-navigation';
-import Index from './Screens/Index'
-import Profile from './Screens/Profile'
-import Bangumi from './Screens/Bangumi'
-import Login from './Modals/Login'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import Index from './src/Screens/Index'
+import Profile from './src/Screens/Profile'
+import Bangumi from './src/Screens/Bangumi'
+import SignIn from './src/Modals/SignIn'
+import { View } from 'react-native';
 
-const MainStack = createStackNavigator(
+const ScreensStack = createStackNavigator(
   {
     Index,
     Bangumi,
@@ -25,14 +26,18 @@ const MainStack = createStackNavigator(
   }
 );
 
-const App = createStackNavigator(
+const RootTabs = createBottomTabNavigator(
   {
-    Main: {
-      screen: MainStack,
-    },
-    Login: {
-      screen: Login,
-    },
+    Index,
+    Bangumi,
+    Profile
+  }
+)
+
+const RootStack = createStackNavigator(
+  {
+    ScreensStack,
+    SignIn,
   },
   {
     mode: 'modal',
@@ -42,6 +47,10 @@ const App = createStackNavigator(
 
 export default class extends Component {
   render() {
-    return <App/>;
+    return (
+      <RootStack>
+        <RootTabs/>
+      </RootStack>
+    );
   }
 }

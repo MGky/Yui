@@ -19,7 +19,8 @@ class LogoTitle extends Component {
 
 export default class extends Component {
   static navigationOptions = {
-    headerTitle: <LogoTitle />,
+    // headerTitle: <LogoTitle />,
+    title: '番剧'
   };
 
   render() {

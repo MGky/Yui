@@ -8,7 +8,8 @@ import {
 export default class extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: `Profile：${navigation.getParam('name', 'no-one')}`,
+      // title: `Profile：${navigation.getParam('name', 'no-one')}`,
+      title: '我的',
       headerStyle: {
         backgroundColor: 'transparent'
       },

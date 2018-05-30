@@ -7,7 +7,7 @@ import {
 
 export default class extends Component {
   static navigationOptions = {
-    title: 'Index'
+    title: '首页'
   };
 
   render() {
@@ -23,7 +23,7 @@ export default class extends Component {
           onPress={() => this.props.navigation.navigate('Bangumi')}
         />
         <Button
-          onPress={() => this.props.navigation.navigate('Login')}
+          onPress={() => this.props.navigation.navigate('SignIn')}
           title="Open Login Modal"
         />
       </View>
